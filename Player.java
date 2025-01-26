@@ -4,12 +4,14 @@ parking, and own houses and hotels.
 1 arraylist for houses and 1 for hotels? */
 
 public class Player {
+    private String name;
     private int balance;
     private String gamePiece;
     private boolean inPrison;
     private boolean freeParking;
 
-    public Player(int balance) {
+    public Player(String name, int balance) {
+        this.name = name;
         this.balance = balance;
     }
 

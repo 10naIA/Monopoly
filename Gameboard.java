@@ -1,5 +1,6 @@
-//arraylist<object> for brettet
-//arraylist for spillere
+/* The gameboard for Monopoly has a list with the places/squares, a list with
+the players and a list with game pieces that are randomly chosen. */
+
 import java.util.ArrayList;
 import java.lang.Math;
 
@@ -15,6 +16,7 @@ public class Gameboard {
         fillGameBoard();
     }
 
+    // Ikke ferdig
     public void fillGameBoard() {
         gameBoard.add("Start");
         gameBoard.add(new Place("Parkveien", 1200, Color.PURPLE));
@@ -59,14 +61,14 @@ public class Gameboard {
     }
 
     public void fillPieceArray() {
-        gamePieces.add("Dog");
-        gamePieces.add("Hat");
-        gamePieces.add("Iron");
-        gamePieces.add("Car");
-        gamePieces.add("Boot");
-        gamePieces.add("Ship");
-        gamePieces.add("Wheelbarrow");
-        gamePieces.add("Thimble");
+        gamePieces.add("dog");
+        gamePieces.add("hat");
+        gamePieces.add("iron");
+        gamePieces.add("car");
+        gamePieces.add("boot");
+        gamePieces.add("ship");
+        gamePieces.add("wheelbarrow");
+        gamePieces.add("thimble");
     }
 
     public void pickGamePiece(Player player) {
