@@ -9,6 +9,10 @@ public class Player {
     private boolean inPrison;
     private boolean freeParking;
 
+    public Player(int balance) {
+        this.balance = balance;
+    }
+
 
     public int getBalance() {
         return balance;

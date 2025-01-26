@@ -1,6 +1,9 @@
 //
 
 public class PlayGame {
-    Gameboard gameboard = new Gameboard();
-    
+
+    public static void main() {
+        Gameboard gameboard = new Gameboard();
+    }
+
 }
