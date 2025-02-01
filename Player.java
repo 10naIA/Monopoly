@@ -16,6 +16,9 @@ public class Player {
         this.balance = balance;
     }
 
+    public String getName() {
+        return name;
+    }
 
     public int getBalance() {
         return balance;

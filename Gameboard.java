@@ -10,6 +10,7 @@ public class Gameboard {
     ArrayList<Player> players = new ArrayList<>();
     String[] chance = {};
     String[] communityChest = {};
+    Boolean firstRound = true;
 
     public Gameboard() {
         fillPieceArray();
@@ -96,25 +97,25 @@ public class Gameboard {
         for(int i = 0; i < 2; i++) {
             int dice = min + (int)(Math.random() * ((max - min) + 1));
             counter += dice;
-            System.out.println("Du fikk " + dice);
+            System.out.println("You got " + dice);
         }
-        System.out.println("Gå " + counter + " steg");
+        System.out.println("Walk " + counter + " steps");
         walkGameboard(counter, player);
     }
 
     public void walkGameboard(int steps, Player player) {
         int currentPosition = player.getPosition();
-        //regn ut ny posisjon. må sjekke om passerer start
-        //hva hvis slutten av listen, hoppe tilbake til indeks 0(start)
         int newPosition = currentPosition;
-        for(int i = currentPosition; i < (currentPosition + steps); i++) {
+        for(int i = currentPosition; i <= (currentPosition + steps); i++) {
+            // If the position goes past the last index it jumps back to the start of the arraylist
             newPosition = i % gameBoard.size();
-            if(newPosition == 0) {
-                System.out.println("Du passerte Start, du får 2000 kr");
+            if(newPosition == 0 && !firstRound) {
+                System.out.println("You passed Start, you get 2000 kr!");
                 player.deposit(2000);
             }
+            firstRound = false;
         }
-        System.out.println("Du står på: " + gameBoard.get(newPosition));
+        System.out.println("You are standing on " + gameBoard.get(newPosition));
         player.setPosition(newPosition);
         //gi info om sted
     }

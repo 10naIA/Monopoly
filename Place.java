@@ -21,8 +21,13 @@ public class Place {
         this.owner = owner;
     }
 
-    public Player getOwner() {
-        return owner;
+    public String getOwner() {
+        if(owner == null) {
+            return "no one";
+        }
+        else {
+            return owner.getName();
+        }
     }
 
     public void setPrice(int price) {
@@ -63,8 +68,8 @@ public class Place {
         }
     }
 
+    @Override
     public String toString() {
-        return "Du står på " + name + "\n"
-            ;
+        return name + "\nOwner: " + getOwner() + "\nPrice: " + price;
     }
 }

@@ -8,6 +8,14 @@ public class PlayGame {
         gameboard.addPlayer(tina);
         gameboard.pickGamePiece(tina);
         gameboard.rollDice(tina);
+        gameboard.rollDice(tina);
+        gameboard.rollDice(tina);
+        gameboard.rollDice(tina);
+        gameboard.rollDice(tina);
+        gameboard.rollDice(tina);
+        gameboard.rollDice(tina);
+        System.out.println(tina.getBalance());
+
     }
 }
     
