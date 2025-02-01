@@ -7,6 +7,7 @@ public class PlayGame {
         Player tina = new Player("Tina", 30000);
         gameboard.addPlayer(tina);
         gameboard.pickGamePiece(tina);
+        gameboard.rollDice();
     }
 }
     

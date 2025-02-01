@@ -90,5 +90,14 @@ public class Gameboard {
     public void rollDice() {
         //random int på 2 terninger
         //oppdater player og gå på brettet
+        int min = 1;
+        int max = 6;
+        int counter = 0;
+        for(int i = 0; i < 2; i++) {
+            int dice = min + (int)(Math.random() * ((max - min) + 1));
+            counter += dice;
+            System.out.println("Du fikk " + dice);
+        }
+        System.out.println("Gå " + counter + " steg");
     }
 }
