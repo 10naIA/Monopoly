@@ -62,4 +62,9 @@ public class Place {
             return hotelRent;
         }
     }
+
+    public String toString() {
+        return "Du står på " + name + "\n"
+            ;
+    }
 }

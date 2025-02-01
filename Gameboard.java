@@ -87,7 +87,7 @@ public class Gameboard {
         players.remove(player);
     }
 
-    public void rollDice() {
+    public void rollDice(Player player) {
         //random int på 2 terninger
         //oppdater player og gå på brettet
         int min = 1;
@@ -99,5 +99,23 @@ public class Gameboard {
             System.out.println("Du fikk " + dice);
         }
         System.out.println("Gå " + counter + " steg");
+        walkGameboard(counter, player);
+    }
+
+    public void walkGameboard(int steps, Player player) {
+        int currentPosition = player.getPosition();
+        //regn ut ny posisjon. må sjekke om passerer start
+        //hva hvis slutten av listen, hoppe tilbake til indeks 0(start)
+        int newPosition = currentPosition;
+        for(int i = currentPosition; i < (currentPosition + steps); i++) {
+            newPosition = i % gameBoard.size();
+            if(newPosition == 0) {
+                System.out.println("Du passerte Start, du får 2000 kr");
+                player.deposit(2000);
+            }
+        }
+        System.out.println("Du står på: " + gameBoard.get(newPosition));
+        player.setPosition(newPosition);
+        //gi info om sted
     }
 }
