@@ -9,12 +9,16 @@ public class Player {
     private String gamePiece;
     private boolean inPrison;
     private boolean freeParking;
+    private int currentPosition;
 
     public Player(String name, int balance) {
         this.name = name;
         this.balance = balance;
     }
 
+    public String getName() {
+        return name;
+    }
 
     public int getBalance() {
         return balance;
@@ -52,5 +56,13 @@ public class Player {
 
     public void setGamePiece(String gamePiece) {
         this.gamePiece = gamePiece;
+    }
+
+    public void setPosition(int position) {
+        currentPosition = position;
+    }
+
+    public int getPosition() {
+        return currentPosition;
     }
 }
